@@ -24,7 +24,7 @@ public class Solution {
 
         /**
          * @param out A stream for externalization
-         * @throws java.io.IOException
+         * @throws IOException
          */
         @Override
         public void writeExternal(ObjectOutput out) throws IOException {
@@ -33,7 +33,7 @@ public class Solution {
 
         /**
          * @param in A stream for de-externalization
-         * @throws java.io.IOException
+         * @throws IOException
          * @throws ClassNotFoundException
          */
         @Override

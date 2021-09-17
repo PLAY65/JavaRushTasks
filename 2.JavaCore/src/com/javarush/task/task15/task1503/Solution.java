@@ -6,10 +6,10 @@ package com.javarush.task.task15.task1503;
 
 public class Solution {
     public static void main(String[] args) {
-        new Solution.LuxuriousCar().printlnDesire();
-        new Solution.CheapCar().printlnDesire();
-        new Solution.Ferrari().printlnDesire();
-        new Solution.Lanos().printlnDesire();
+        new LuxuriousCar().printlnDesire();
+        new CheapCar().printlnDesire();
+        new Ferrari().printlnDesire();
+        new Lanos().printlnDesire();
     }
 
     public static class Ferrari extends LuxuriousCar{
