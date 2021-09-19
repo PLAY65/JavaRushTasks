@@ -10,6 +10,11 @@ public class Hippodrome {
         return horses;
     }
 
+    public Hippodrome(List horses){
+        this.horses = horses;
+    }
+
+
     public static void main(String[] args) {
 
 
