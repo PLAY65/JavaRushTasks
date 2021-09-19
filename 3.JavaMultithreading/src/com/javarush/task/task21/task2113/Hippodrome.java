@@ -42,9 +42,9 @@ public class Hippodrome {
 
     public static void main(String[] args) throws InterruptedException {
         game = new Hippodrome(new ArrayList<>());
-        game.getHorses().add(new Horse("alma",3,0));
-        game.getHorses().add(new Horse("backy",3,0));
-        game.getHorses().add(new Horse("cinatra",3,0));
+        game.getHorses().add(new Horse("Slevin",3,0));
+        game.getHorses().add(new Horse("Lucky",3,0));
+        game.getHorses().add(new Horse("Homer",3,0));
 
         game.run();
     }
