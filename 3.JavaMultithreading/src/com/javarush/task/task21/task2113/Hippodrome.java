@@ -18,7 +18,9 @@ public class Hippodrome {
     static Hippodrome game;
 
     void move(){
-
+        for (Horse horse: horses) {
+            horse.move();
+        }
     }
 
     void print(){
