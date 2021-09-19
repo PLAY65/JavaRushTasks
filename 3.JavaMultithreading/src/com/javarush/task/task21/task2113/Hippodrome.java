@@ -17,6 +17,18 @@ public class Hippodrome {
 
     static Hippodrome game;
 
+    void move(){
+
+    }
+
+    void print(){
+
+    }
+
+    void run(){
+
+    }
+
     public static void main(String[] args) {
         game = new Hippodrome(new ArrayList<>());
         game.getHorses().add(new Horse("alma",3,0));
