@@ -40,6 +40,24 @@ public class Hippodrome {
         }
     }
 
+    public Horse getWinner(){
+        Horse max = null;
+        double max_distance = 0;
+        for (Horse horse: horses) {
+            if(horse.distance>max_distance){
+                max = horse;
+                max_distance = horse.distance;
+            }
+        }
+        return max;
+    }
+
+    public void printWinner(){
+        Horse winner = getWinner();
+        System.out.print("Winner is " + winner.getName() + "!");
+    }
+
+
     public static void main(String[] args) throws InterruptedException {
         game = new Hippodrome(new ArrayList<>());
         game.getHorses().add(new Horse("Slevin",3,0));
