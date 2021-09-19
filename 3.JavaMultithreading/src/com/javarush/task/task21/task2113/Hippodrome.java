@@ -65,5 +65,7 @@ public class Hippodrome {
         game.getHorses().add(new Horse("Homer",3,0));
 
         game.run();
+
+        game.printWinner();
     }
 }
