@@ -25,8 +25,12 @@ public class Hippodrome {
 
     }
 
-    void run(){
-
+    void run() throws InterruptedException {
+        for (int i = 0; i < 100; i++) {
+            move();
+            print();
+            Thread.sleep(200);
+        }
     }
 
     public static void main(String[] args) {
