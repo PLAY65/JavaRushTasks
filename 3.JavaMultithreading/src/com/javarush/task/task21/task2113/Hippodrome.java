@@ -24,7 +24,12 @@ public class Hippodrome {
     }
 
     void print(){
-
+        for (Horse horse: horses) {
+            horse.print();
+        }
+        for (int i = 0; i < 10; i++) {
+            System.out.println();
+        }
     }
 
     void run() throws InterruptedException {
@@ -35,10 +40,12 @@ public class Hippodrome {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         game = new Hippodrome(new ArrayList<>());
         game.getHorses().add(new Horse("alma",3,0));
         game.getHorses().add(new Horse("backy",3,0));
         game.getHorses().add(new Horse("cinatra",3,0));
+
+        game.run();
     }
 }
