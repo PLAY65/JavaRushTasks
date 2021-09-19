@@ -1,5 +1,7 @@
 package com.javarush.task.task21.task2113;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 public class Horse {
 
     String name;
@@ -37,7 +39,7 @@ public class Horse {
     }
 
     public void move(){
-
+        distance += speed* ((Math.random() * (1 - 0)) + 0);
     }
 
     public void print(){
