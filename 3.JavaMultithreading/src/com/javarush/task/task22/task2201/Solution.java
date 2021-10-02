@@ -2,6 +2,25 @@ package com.javarush.task.task22.task2201;
 
 /* 
 Строки нитей или строковые нити? Вот в чем вопрос
+1. Метод getPartOfString должен возвращать подстроку между первой и последней табуляцией.
+2. На некорректные данные getPartOfString должен бросить исключение:
+а) StringForFirstThreadTooShortException, если имя трэда FIRST_THREAD_NAME.
+б) StringForSecondThreadTooShortException, если имя трэда SECOND_THREAD_NAME.
+в) RuntimeException в других случаях.
+3. Реализуй логику трех protected методов в OurUncaughtExceptionHandler используя вызовы соответствующих методов согласно следующим шаблонам:
+a) 1# : StringForFirstThreadTooShortException : java.lang.StringIndexOutOfBoundsException: String index out of range: -1
+б) java.lang.StringIndexOutOfBoundsException: String index out of range: -1 : StringForSecondThreadTooShortException : 2#
+в) RuntimeException : java.lang.StringIndexOutOfBoundsException: String index out of range: -1 : 3#
+
+
+Requirements:
+1. Метод getPartOfString() должен возвращать подстроку между первой и последней табуляцией строки string переданной ему в качестве первого параметра.
+2. В случае некорректных данных метод getPartOfString() должен бросить исключение StringForFirstThreadTooShortException, если имя трэда(threadName) Solution.FIRST_THREAD_NAME.
+3. В случае некорректных данных метод getPartOfString() должен бросить исключение StringForSecondThreadTooShortException, если имя трэда(threadName) Solution.SECOND_THREAD_NAME.
+4. В случае некорректных данных метод getPartOfString() должен бросить исключение RuntimeException, если имя трэда(threadName) не Solution.FIRST_THREAD_NAME или Solution.SECOND_THREAD_NAME.
+5. Метод getFormattedStringForFirstThread() должен возвращать строку сформированную из переданных параметров по шаблону указанному в задании.
+6. Метод getFormattedStringForSecondThread() должен возвращать строку сформированную из переданных параметров по шаблону указанному в задании.
+7. Метод getFormattedStringForOtherThread() должен возвращать строку сформированную из переданных параметров по шаблону указанному в задании.
 */
 
 public class Solution {
@@ -33,6 +52,15 @@ public class Solution {
     }
 
     public synchronized String getPartOfString(String string, String threadName) {
-        return null;
+        if (string == null) throw new RuntimeException();
+        String result;
+        try {
+            result = string.substring(string.indexOf("\t") + 1, string.lastIndexOf("\t"));
+        }catch (StringIndexOutOfBoundsException e) {
+            if (threadName.equals(FIRST_THREAD_NAME)) throw new StringForFirstThreadTooShortException(e);
+            if (threadName.equals(SECOND_THREAD_NAME)) throw new StringForSecondThreadTooShortException(e);
+            throw new RuntimeException(e);
+        }
+        return result;
     }
 }

@@ -42,7 +42,7 @@ public class Solution {
         if (str.length<5)
             throw new TooShortStringException();
 
-        return str[1] + " " + str[2] + " " + str[3] + " " + str[4];
+        return String.format("%s %s %s %s", str[1], str[2], str[3], str[4]);
     }
 
     public static class TooShortStringException extends RuntimeException {
