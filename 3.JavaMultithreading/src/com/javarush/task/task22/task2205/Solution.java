@@ -1,17 +1,16 @@
-package com.javarush.task.task22.task2204;
+package com.javarush.task.task22.task2205;
 
 /* 
-Форматирование строки
+МНЕ нравится курс JavaRush
 Исправить метод getFormattedString так, чтобы он возвращал строку с параметрами для форматирования.
-Для перевода каретки не используй \n.
+Параметры должны меняться местами.
 
 Должен быть вывод:
-20 / 7 = 2,86
-Exp = 3,33e+00
+МНЕ нравится курс JavaRush
 
 
 Requirements:
-1. Для перевода строки не должно быть использовано выражение \n.
+1. Метод getFormattedString должен быть публичным.
 2. Метод getFormattedString должен быть статическим.
 3. Вывод на экран должен соответствовать условию задачи.
 4. Метод getFormattedString должен возвращать строку с параметрами для форматирования согласно условию задачи.
@@ -19,13 +18,12 @@ Requirements:
 
 public class Solution {
     public static void main(String[] args) {
-        System.out.printf((getFormattedString()) + "%n", 20.0 / 7.0, 10.0 / 3.0);
+        System.out.println(String.format(getFormattedString(), "JavaRush", "курс", "мне", "нравится"));
         //должен быть вывод
-        //20 / 7 = 2,86
-        //Exp = 3,33e+00
+        //"МНЕ нравится курс JavaRush"
     }
 
     public static String getFormattedString() {
-        return "20 / 7 = %.2f%nExp = %.2e";
+        return "%3$s".toUpperCase() + " %4$s %2$s %1$s" ;
     }
 }
